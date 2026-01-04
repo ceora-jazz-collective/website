@@ -8,6 +8,7 @@
 // -----------------------------------------------------------------------------
 
 // Base colors
+/*
 $color-bg-primary: #0a0e14;
 $color-bg-secondary: #19242e;
 $color-bg-tertiary: #141b22;
@@ -26,6 +27,27 @@ $color-line-subtle: rgba(243, 243, 243, 0.08);
 $color-bg-menu: rgba(10, 14, 20, 0.95);
 
 $color-accent-08: rgba(240, 197, 26, 0.08);
+*/
+
+// Base colors (dark green / olive)
+$color-bg-primary: #060a07;
+$color-bg-secondary: #142015;
+$color-bg-tertiary: #0e1510;
+
+// Accent colors (olive)
+$color-accent-primary: #556b2f; // dark olive green
+$color-accent-secondary: #6b8e23; // olive drab
+$color-accent-highlight: #8aa84a; // brighter olive
+
+// Color variations with opacity
+$color-fg-primary: #ffffff;
+$color-fg-secondary: #a0a0a0;
+$color-line: rgba(255, 255, 255, 0.18);
+$color-line-subtle: rgba(255, 255, 255, 0.08);
+
+$color-bg-menu: rgba(6, 10, 7, 0.95);
+
+$color-accent-08: rgba(85, 107, 47, 0.08);
 
 // -----------------------------------------------------------------------------
 // Fonts

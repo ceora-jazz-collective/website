@@ -17,11 +17,15 @@
   z-index: -2;
   background: radial-gradient(
       1000px 600px at 50% 20%,
-      rgba(255, 255, 255, 0.06),
-      rgba(10, 14, 20, 0) 60%
+      rgba($color-accent-highlight, 0.08),
+      rgba($color-bg-primary, 0) 60%
     ),
-    linear-gradient(180deg, rgba(10, 14, 20, 0) 0%, rgba(10, 14, 20, 0.55) 90%),
-    #0a0e14;
+    linear-gradient(
+      180deg,
+      rgba($color-bg-primary, 0) 0%,
+      rgba($color-bg-primary, 0.65) 90%
+    ),
+    $color-bg-primary;
 }
 
 .welcome::after {
@@ -34,22 +38,22 @@
   // Glamorous bokeh + soft "aurora" sheen (kept behind content; tuned for readability)
   background: radial-gradient(
       820px 540px at 18% 20%,
-      rgba(42, 167, 183, 0.26),
-      rgba(10, 14, 20, 0) 62%
+      rgba($color-accent-highlight, 0.22),
+      rgba($color-bg-primary, 0) 62%
     ),
     radial-gradient(
       680px 520px at 86% 26%,
-      rgba(240, 197, 26, 0.14),
-      rgba(10, 14, 20, 0) 60%
+      rgba($color-accent-secondary, 0.18),
+      rgba($color-bg-primary, 0) 60%
     ),
     radial-gradient(
       980px 680px at 55% 92%,
-      rgba(25, 99, 122, 0.24),
-      rgba(10, 14, 20, 0) 64%
+      rgba($color-accent-primary, 0.2),
+      rgba($color-bg-primary, 0) 64%
     );
-  opacity: 0.65;
+  opacity: 0.55;
   mix-blend-mode: screen;
-  filter: saturate(120%) contrast(110%);
+  filter: saturate(110%) contrast(108%);
 }
 
 .welcome__bg {
@@ -60,7 +64,7 @@
   object-fit: cover;
   z-index: -3;
   opacity: 0.2;
-  filter: blur(120px) saturate(175%);
+  filter: blur(120px) saturate(135%);
   transform: translate3d(0, 0, 0);
   pointer-events: none;
   user-select: none;
@@ -87,7 +91,7 @@
 .welcome__subtitle {
   margin: 14px 0 0;
   font-size: clamp(18px, 2.2vw, 24px);
-  color: rgba(190, 214, 232, 0.92);
+  color: rgba($color-fg-secondary, 0.92);
 }
 
 .welcome__subtitle {

@@ -1,0 +1,160 @@
+<section id="gigs" class="bg-primary" aria-label="Live">
+  <div class="section-inner">
+    <h2 class="section-title">Live</h2>
+    <p class="section-lead">Kommende Konzerte und Auftritte</p>
+
+    <div class="concerts-grid" data-gigs-root aria-live="polite">
+      <div class="gigs-status gigs-status--loading">Lade Termine…</div>
+    </div>
+  </div>
+
+  <script type="module">
+    /**
+     * Expected JSON format: Array of entries, at minimum:
+     *   { date: string, location?: string, title?: string, venue?: string, time?: string, lineup?: string, artists?: string }
+     */
+
+    function parseISODateLocal(isoString) {
+      if (typeof isoString !== 'string') return null;
+      const m = isoString.slice(0, 10).match(/^(\d{4})-(\d{2})-(\d{2})$/);
+      if (!m) return null;
+      const y = Number(m[1]);
+      const mo = Number(m[2]);
+      const d = Number(m[3]);
+      if (!Number.isFinite(y) || !Number.isFinite(mo) || !Number.isFinite(d))
+        return null;
+      const dt = new Date(y, mo - 1, d);
+      if (Number.isNaN(dt.getTime())) return null;
+      return dt;
+    }
+
+    function startOfToday() {
+      const d = new Date();
+      d.setHours(0, 0, 0, 0);
+      return d;
+    }
+
+    function formatParts(date) {
+      const day = String(date.getDate()).padStart(2, '0');
+      const month = new Intl.DateTimeFormat('de-DE', { month: 'short' })
+        .format(date)
+        .replace('.', '');
+      const year = String(date.getFullYear());
+      return { day, month, year };
+    }
+
+    function textOrNull(v) {
+      if (typeof v !== 'string') return null;
+      const t = v.trim();
+      return t.length ? t : null;
+    }
+
+    function createEl(tag, className, text, attributes) {
+      const el = document.createElement(tag);
+      if (className) el.className = className;
+      if (typeof text === 'string') el.textContent = text;
+      if (attributes) {
+        for (const [key, value] of Object.entries(attributes)) {
+          el.setAttribute(key, value);
+        }
+      }
+      return el;
+    }
+
+    function renderPlaceholder(root) {
+      const article = createEl('article', 'concert-card concert-card-past');
+      const dateBox = createEl('div', 'concert-date');
+      dateBox.append(createEl('span', 'day', '—'));
+      dateBox.append(createEl('span', 'month', ''));
+      dateBox.append(createEl('span', 'year', ''));
+
+      const info = createEl('div', 'concert-info');
+      info.append(createEl('h3', '', 'Weitere Termine'));
+      info.append(
+        createEl('p', 'concert-venue', 'Werden in Kürze bekanntgegeben')
+      );
+      info.append(createEl('p', 'concert-time', 'Newsletter abonnieren'));
+
+      article.append(dateBox, info);
+      root.append(article);
+    }
+
+    async function loadAndRender() {
+      const root = document.querySelector('[data-gigs-root]');
+      if (!root) return;
+
+      try {
+        const res = await fetch('/data/gigs.json', { cache: 'no-store' });
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+        const data = await res.json();
+        if (!Array.isArray(data)) throw new Error('Invalid JSON format');
+
+        const today = startOfToday();
+
+        const gigs = data
+          .map((g) => {
+            const date = parseISODateLocal(g?.date);
+            return { raw: g, date };
+          })
+          .filter((g) => g.date && g.date.getTime() >= today.getTime())
+          .sort((a, b) => a.date.getTime() - b.date.getTime());
+
+        root.innerHTML = '';
+
+        if (!gigs.length) {
+          renderPlaceholder(root);
+          return;
+        }
+
+        for (const gig of gigs) {
+          const { day, month, year } = formatParts(gig.date);
+          const raw = gig.raw ?? {};
+
+          const title =
+            textOrNull(raw.title) || textOrNull(raw.location) || 'Termin';
+          const venue = textOrNull(raw.venue) || textOrNull(raw.address);
+          const time = textOrNull(raw.time);
+          const description =
+            textOrNull(raw.description) || textOrNull(raw.artists);
+          const website = textOrNull(raw.website);
+
+          const article = createEl('article', 'concert-card');
+
+          const dateBox = createEl('div', 'concert-date');
+          dateBox.append(createEl('span', 'day', day));
+          dateBox.append(createEl('span', 'month', month));
+          dateBox.append(createEl('span', 'year', year));
+
+          const info = createEl('div', 'concert-info');
+          info.append(createEl('h3', '', title));
+          if (venue) info.append(createEl('p', 'concert-venue', venue));
+          if (time) info.append(createEl('p', 'concert-time', `${time} Uhr`));
+          if (description)
+            info.append(createEl('p', 'concert-description', description));
+          if (website)
+            info.append(
+              createEl('a', 'concert-website', 'Mehr Infos', {
+                href: website,
+                target: '_blank',
+              })
+            );
+
+          article.append(dateBox, info);
+          root.append(article);
+        }
+      } catch (e) {
+        root.innerHTML = '';
+        const msg = createEl(
+          'div',
+          'gigs-status gigs-status--error',
+          'Termine konnten nicht geladen werden.'
+        );
+        root.append(msg);
+        // eslint-disable-next-line no-console
+        console.error('[gigs] failed to load /data/gigs.json', e);
+      }
+    }
+
+    loadAndRender();
+  </script>
+</section>

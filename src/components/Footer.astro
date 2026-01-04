@@ -1,0 +1,44 @@
+---
+const year = new Date().getFullYear();
+---
+
+<footer class="site-footer" role="contentinfo">
+  <div class="site-footer__inner">
+    <div class="site-footer__brand">
+      <a
+        class="site-footer__logo"
+        href="/"
+        aria-label="Ceora Jazz Collective - Startseite"
+      >
+        <img
+          class="site-footer__logo-img"
+          src="/logo-petrol.svg"
+          alt="Ceora Jazz Collective"
+          width="120"
+          height="28"
+        />
+      </a>
+      <p class="site-footer__tagline">Jazz Collective Wien — seit 2007</p>
+      <p class="site-footer__contact">
+        Booking:&nbsp;<a
+          class="site-footer__link"
+          href="mailto:booking@ceora-band.at">booking@ceora-band.at</a
+        >
+      </p>
+    </div>
+
+    <nav class="site-footer__nav" aria-label="Footer">
+      <a class="site-footer__link" href="/#about">Über uns</a>
+      <a class="site-footer__link" href="/#gigs">Gigs</a>
+      <a class="site-footer__link" href="/#media">Media</a>
+      <a class="site-footer__link" href="/#contact">Kontakt</a>
+    </nav>
+
+    <div class="site-footer__legal">
+      <p class="site-footer__copyright">
+        © {year} CEORA. Alle Rechte vorbehalten.
+      </p>
+      <a class="site-footer__link" href="/impressum">Impressum</a>
+    </div>
+  </div>
+</footer>

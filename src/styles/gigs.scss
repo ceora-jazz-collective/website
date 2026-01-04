@@ -1,0 +1,124 @@
+@use 'variables' as *;
+
+// -----------------------------------------------------------------------------
+// Gigs / Live section (ported from legacy `public/ceora-website.html`)
+// -----------------------------------------------------------------------------
+
+.concerts-grid {
+  display: grid;
+  gap: $spacing-md;
+  margin-top: $spacing-lg;
+}
+
+.concert-card {
+  display: flex;
+  gap: $spacing-lg;
+  padding: $spacing-lg;
+  background: $color-bg-tertiary;
+  border: 1px solid rgba(243, 243, 243, 0.1);
+  border-radius: $radius-md;
+  transition: border-color $transition-fast;
+}
+
+.concert-card:hover {
+  border-color: rgba(243, 243, 243, 0.18);
+}
+
+.concert-date {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-width: 80px;
+  padding: $spacing-sm;
+  background: $color-accent-primary;
+  text-align: center;
+  border-radius: $radius-sm;
+  height: fit-content;
+}
+
+.concert-date .day {
+  font-family: $font-display;
+  font-size: 2rem;
+  font-weight: 500;
+  line-height: 1;
+  color: $color-fg-primary;
+}
+
+.concert-date .month {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: $color-fg-secondary;
+  margin-top: $spacing-xs;
+}
+
+.concert-date .year {
+  font-size: 0.625rem;
+  color: rgba(168, 180, 192, 0.7);
+}
+
+.concert-info h3 {
+  font-family: $font-display;
+  font-size: 1.25rem;
+  font-weight: 500;
+  margin: 0 0 $spacing-xs 0;
+  color: $color-fg-primary;
+}
+
+.concert-venue {
+  font-size: 0.875rem;
+  color: $color-fg-secondary;
+  margin: 0;
+}
+
+.concert-time {
+  font-size: 0.875rem;
+  color: rgba(168, 180, 192, 0.7);
+  margin: $spacing-xs 0 0 0;
+}
+
+.concert-lineup {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: $color-accent-highlight;
+  margin: $spacing-sm 0 0 0;
+}
+
+.concert-website {
+  font-size: 0.875rem;
+  color: $color-accent-highlight;
+  margin: $spacing-xs 0 0 0;
+}
+
+.concert-card-past {
+  opacity: 0.6;
+}
+
+.gigs-status {
+  padding: $spacing-md;
+  border: 1px solid $color-line-subtle;
+  border-radius: $radius-md;
+  background: rgba(10, 14, 20, 0.35);
+  color: $color-fg-secondary;
+}
+
+.gigs-status--error {
+  border-color: rgba(255, 255, 255, 0.14);
+}
+
+@media (max-width: $breakpoint-mobile) {
+  .concert-card {
+    flex-direction: column;
+    gap: $spacing-md;
+  }
+
+  .concert-date {
+    flex-direction: row;
+    gap: $spacing-sm;
+    min-width: auto;
+    justify-content: flex-start;
+  }
+}

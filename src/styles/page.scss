@@ -1,0 +1,73 @@
+@use 'variables' as *;
+
+.page {
+  max-width: $container-max-width;
+  margin: 0 auto;
+  padding: $spacing-lg $spacing-md $spacing-lg;
+}
+
+.page h1 {
+  margin: 0 0 $spacing-md 0;
+  font-size: 34px;
+}
+
+.page h2 {
+  margin: $spacing-lg 0 $spacing-sm 0;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.page p {
+  margin: 0 0 $spacing-sm 0;
+  color: $color-fg-secondary;
+  line-height: 1.6;
+}
+
+.page a {
+  color: $color-fg-primary;
+  text-decoration: underline;
+  text-decoration-color: rgba(243, 243, 243, 0.28);
+  text-underline-offset: 3px;
+}
+
+.page a:hover,
+.page a:focus-visible {
+  text-decoration-color: rgba(243, 243, 243, 0.6);
+  outline: none;
+}
+
+.page__box {
+  margin-top: $spacing-md;
+  padding: $spacing-md;
+  border: 1px solid $color-line-subtle;
+  border-radius: $radius-md;
+  background: rgba(10, 14, 20, 0.55);
+  backdrop-filter: blur($blur-overlay);
+}
+
+.page dl {
+  margin: 0;
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  gap: 10px 16px;
+}
+
+.page dt {
+  color: $color-fg-primary;
+  font-weight: 600;
+}
+
+.page dd {
+  margin: 0;
+  color: $color-fg-secondary;
+}
+
+@media (max-width: $breakpoint-mobile) {
+  .page {
+    padding: $spacing-md $spacing-sm $spacing-md;
+  }
+
+  .page dl {
+    grid-template-columns: 1fr;
+  }
+}

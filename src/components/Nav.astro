@@ -1,0 +1,71 @@
+---
+const links = [
+  { label: 'Über uns', href: '/#about' },
+  { label: 'Gigs', href: '/#gigs' },
+  { label: 'Media', href: '/#media' },
+  { label: 'Kontakt', href: '/#contact' },
+];
+---
+
+<header class="site-nav" role="banner">
+  <nav class="site-nav__inner" aria-label="Primary">
+    <a
+      class="site-nav__logo"
+      href="/"
+      aria-label="Ceora Jazz Collective - Home"
+    >
+      <img
+        class="site-nav__logo-img"
+        src="/logo-petrol.svg"
+        alt="Ceora Jazz Collective"
+        height="30"
+      />
+    </a>
+
+    <ul class="site-nav__links site-nav__links--desktop" role="list">
+      {
+        links.map((l) => (
+          <li>
+            <a class="site-nav__link" href={l.href}>
+              {l.label}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+
+    <details class="site-nav__mobile">
+      <summary class="site-nav__toggle" aria-label="Open menu">
+        <span class="site-nav__burger" aria-hidden="true">
+          <span></span>
+          <span></span>
+          <span></span>
+        </span>
+      </summary>
+
+      <div class="site-nav__drawer" role="dialog" aria-label="Menu">
+        <ul class="site-nav__links site-nav__links--mobile" role="list">
+          {
+            links.map((l) => (
+              <li>
+                <a class="site-nav__link" href={l.href}>
+                  {l.label}
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+    </details>
+  </nav>
+</header>
+
+<script>
+  // Close the mobile menu after clicking a link.
+  for (const nav of document.querySelectorAll('.site-nav__mobile')) {
+    nav.addEventListener('click', (e) => {
+      const t = e.target;
+      if (t instanceof HTMLAnchorElement) nav.removeAttribute('open');
+    });
+  }
+</script>

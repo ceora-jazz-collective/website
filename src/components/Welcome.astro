@@ -1,0 +1,26 @@
+---
+import background from '../assets/background.svg';
+---
+
+<section class="welcome" aria-label="Ceora">
+  <img
+    class="welcome__bg"
+    src={background.src}
+    alt=""
+    aria-hidden="true"
+    fetchpriority="high"
+  />
+
+  <div class="welcome__content">
+    <h1 class="welcome__title">CEORA</h1>
+    <p class="welcome__subtitle">Jazz Collective Wien</p>
+    <p class="welcome__tagline">
+      Seit 2007 — Zeitgenössischer Jazz aus der österreichischen Hauptstadt
+    </p>
+
+    <div class="welcome__actions" role="group" aria-label="Aktionen">
+      <a class="btn btn-primary" href="/#gigs">NÄCHSTE KONZERTE</a>
+      <a class="btn btn-secondary" href="/#contact">BOOKING ANFRAGEN</a>
+    </div>
+  </div>
+</section>

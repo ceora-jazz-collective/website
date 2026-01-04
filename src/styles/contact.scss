@@ -1,0 +1,64 @@
+@use 'variables' as *;
+
+// -----------------------------------------------------------------------------
+// Contact section
+// -----------------------------------------------------------------------------
+
+.contact-grid {
+  margin-top: $spacing-lg;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: $spacing-lg;
+}
+
+.contact-card {
+  padding: $spacing-lg;
+  background: $color-bg-tertiary;
+  border: 1px solid rgba(243, 243, 243, 0.1);
+  border-radius: $radius-md;
+}
+
+.contact-card__text {
+  margin: 0 0 $spacing-md 0;
+}
+
+.contact-card__line {
+  margin: 0;
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.contact-card__label {
+  font-size: 12px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: $color-accent-highlight;
+}
+
+.contact-card__link {
+  color: $color-fg-primary;
+  text-decoration: underline;
+  text-decoration-color: rgba(243, 243, 243, 0.28);
+  text-underline-offset: 3px;
+}
+
+.contact-card__link:hover,
+.contact-card__link:focus-visible {
+  text-decoration-color: rgba(243, 243, 243, 0.6);
+  outline: none;
+}
+
+.contact-card__actions {
+  margin-top: $spacing-md;
+}
+
+@media (max-width: 1100px) {
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+

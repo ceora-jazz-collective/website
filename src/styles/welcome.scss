@@ -72,15 +72,15 @@
   width: 140%;
   height: 140%;
   object-fit: cover;
-  z-index: -3;
-  opacity: 0.2;
-  filter: blur(120px) saturate(135%);
+  opacity: 0.5;
+  filter: blur(5px) saturate(200%);
   transform: translate3d(0, 0, 0);
   pointer-events: none;
   user-select: none;
 }
 
 .welcome__content {
+  z-index: 1;
   text-align: center;
   max-width: 960px;
   padding: 0 8px;

@@ -17,7 +17,7 @@
   z-index: -2;
   background: radial-gradient(
       1000px 600px at 50% 20%,
-      rgba($color-accent-highlight, 0.08),
+      rgba($color-accent-highlight, 0.1),
       rgba($color-bg-primary, 0) 60%
     ),
     linear-gradient(
@@ -35,25 +35,35 @@
   z-index: -1;
   pointer-events: none;
 
-  // Glamorous bokeh + soft "aurora" sheen (kept behind content; tuned for readability)
+  // Glamorous bokeh + lapislazuli "aurora" sheen + subtle sparkles (kept behind content)
   background: radial-gradient(
       820px 540px at 18% 20%,
-      rgba($color-accent-highlight, 0.22),
+      rgba($color-accent-highlight, 0.26),
       rgba($color-bg-primary, 0) 62%
     ),
     radial-gradient(
       680px 520px at 86% 26%,
-      rgba($color-accent-secondary, 0.18),
+      rgba($color-accent-secondary, 0.22),
       rgba($color-bg-primary, 0) 60%
     ),
     radial-gradient(
       980px 680px at 55% 92%,
-      rgba($color-accent-primary, 0.2),
+      rgba($color-accent-primary, 0.22),
       rgba($color-bg-primary, 0) 64%
+    ),
+    radial-gradient(
+      1200px 700px at 50% 35%,
+      rgba($color-accent-secondary, 0.12),
+      rgba($color-bg-primary, 0) 72%
+    ),
+    linear-gradient(
+      135deg,
+      rgba($color-accent-highlight, 0.08),
+      rgba($color-bg-primary, 0) 60%
     );
-  opacity: 0.55;
+  opacity: 0.62;
   mix-blend-mode: screen;
-  filter: saturate(110%) contrast(108%);
+  filter: saturate(125%) contrast(112%);
 }
 
 .welcome__bg {

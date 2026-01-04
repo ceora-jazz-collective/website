@@ -28,7 +28,7 @@ $color-bg-menu: rgba(10, 14, 20, 0.95);
 
 $color-accent-08: rgba(240, 197, 26, 0.08);
 */
-
+/*
 // Base colors (dark green / olive)
 $color-bg-primary: #060a07;
 $color-bg-secondary: #142015;
@@ -48,6 +48,32 @@ $color-line-subtle: rgba(255, 255, 255, 0.08);
 $color-bg-menu: rgba(6, 10, 7, 0.95);
 
 $color-accent-08: rgba(85, 107, 47, 0.08);
+*/
+
+// -----------------------------------------------------------------------------
+// Color variant (alternative): Lapislazuli blue
+// Toggle: comment out the active block above and uncomment this block.
+// -----------------------------------------------------------------------------
+
+// Base colors (lapislazuli)
+$color-bg-primary: #070a12;
+$color-bg-secondary: #101a2b;
+$color-bg-tertiary: #0b1220;
+
+// Accent colors (lapislazuli)
+$color-accent-primary: #26619c; // lapis lazuli
+$color-accent-secondary: #2f74b8; // brighter lapis
+$color-accent-highlight: #4ea3d8; // highlight blue
+
+// Color variations with opacity
+$color-fg-primary: #ffffff;
+$color-fg-secondary: #a8b4c0;
+$color-line: rgba(255, 255, 255, 0.18);
+$color-line-subtle: rgba(255, 255, 255, 0.08);
+
+$color-bg-menu: rgba(7, 10, 18, 0.95);
+
+$color-accent-08: rgba(38, 97, 156, 0.08);
 
 // -----------------------------------------------------------------------------
 // Fonts

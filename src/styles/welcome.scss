@@ -72,8 +72,8 @@
   width: 140%;
   height: 140%;
   object-fit: cover;
-  opacity: 0.15;
-  filter: blur(0px) saturate(200%) brightness(100%);
+  opacity: 0.4;
+  filter: blur(0px) saturate(400%) brightness(100%);
   pointer-events: none;
   user-select: none;
   z-index: -1;
@@ -90,7 +90,7 @@
   /* Set the image as a background */
   background: url('/logo-white.svg') no-repeat center center;
   background-size: contain;
-  filter: drop-shadow(10px 10px 5px #000000);
+  filter: drop-shadow(10px 10px 5px #00000066);
   /* Set the dimensions of the h1 to match the image */
   height: 150px; /* Adjust height as needed */
   /* Visually hide the text inside the h1 */

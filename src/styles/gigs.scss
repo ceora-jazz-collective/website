@@ -80,16 +80,15 @@
 
 .concert-lineup {
   font-size: 0.8125rem;
-  font-weight: 600;
+  font-weight: 400;
   text-transform: uppercase;
   letter-spacing: 0.05em;
   color: $color-accent-highlight;
-  margin: $spacing-sm 0 0 0;
 }
 
 .concert-website {
   font-size: 0.875rem;
-  color: $color-accent-highlight;
+  color: $color-fg-secondary;
   margin: $spacing-xs 0 0 0;
 }
 

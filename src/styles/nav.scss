@@ -6,9 +6,17 @@
   height: $nav-height;
   z-index: $z-nav;
 
+  background: transparent;
+  backdrop-filter: none;
+  border-bottom: 1px solid transparent;
+  transition: background-color $transition-fast, border-color $transition-fast;
+}
+
+.site-nav.is-scrolled,
+.site-nav.is-menu-open {
   background: $color-bg-menu;
   backdrop-filter: blur($blur-nav);
-  border-bottom: 1px solid $color-line-subtle;
+  border-bottom-color: $color-line-subtle;
 }
 
 .site-nav__inner {

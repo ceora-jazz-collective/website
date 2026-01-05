@@ -7,7 +7,7 @@ const links = [
 ];
 ---
 
-<header class="site-nav" role="banner">
+<header class="site-nav" role="banner" data-site-nav>
   <nav class="site-nav__inner" aria-label="Primary">
     <a
       class="site-nav__logo"
@@ -16,7 +16,7 @@ const links = [
     >
       <img
         class="site-nav__logo-img"
-        src="/logo-blau.svg"
+        src="/logo-white.svg"
         alt="Ceora Jazz Collective"
         height="30"
       />
@@ -61,6 +61,24 @@ const links = [
 </header>
 
 <script>
+  const header = document.querySelector('[data-site-nav]');
+  const mobileMenu = header?.querySelector('.site-nav__mobile');
+
+  function updateNavState() {
+    if (!header) return;
+    header.classList.toggle('is-scrolled', window.scrollY > 0);
+    header.classList.toggle(
+      'is-menu-open',
+      !!mobileMenu && mobileMenu.hasAttribute('open')
+    );
+  }
+
+  // Apply initial state and keep it in sync.
+  updateNavState();
+  window.addEventListener('scroll', updateNavState, { passive: true });
+  mobileMenu?.addEventListener('toggle', updateNavState);
+  document.addEventListener('astro:page-load', updateNavState);
+
   // Close the mobile menu after clicking a link.
   for (const nav of document.querySelectorAll('.site-nav__mobile')) {
     nav.addEventListener('click', (e) => {

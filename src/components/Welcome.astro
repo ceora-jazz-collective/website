@@ -1,16 +1,16 @@
 ---
-import background from '../assets/background-1.jpg';
+import background from '../assets/background-2.jpeg';
 ---
 
-<section class="welcome" aria-label="Ceora">
-  <img
-    class="welcome__bg"
-    src={background.src}
-    alt=""
-    aria-hidden="true"
-    fetchpriority="high"
-  />
+<img
+  class="welcome__bg"
+  src={background.src}
+  alt=""
+  aria-hidden="true"
+  fetchpriority="high"
+/>
 
+<section class="welcome" aria-label="Ceora">
   <div class="welcome__content">
     <h1 class="welcome__title">CEORA</h1>
     <p class="welcome__subtitle">Jazz Collective Wien</p>
@@ -19,7 +19,7 @@ import background from '../assets/background-1.jpg';
     </p>
 
     <div class="welcome__actions" role="group" aria-label="Aktionen">
-      <a class="btn btn-primary" href="/#gigs">NÄCHSTE KONZERTE</a>
+      <a class="btn btn-secondary" href="/#gigs">NÄCHSTE KONZERTE</a>
       <a class="btn btn-secondary" href="/#contact">BOOKING ANFRAGEN</a>
     </div>
   </div>

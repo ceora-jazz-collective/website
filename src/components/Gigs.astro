@@ -116,6 +116,7 @@
           const time = textOrNull(raw.time);
           const description =
             textOrNull(raw.description) || textOrNull(raw.artists);
+          const artists = textOrNull(raw.artists);
           const website = textOrNull(raw.website);
 
           const article = createEl('article', 'concert-card');
@@ -131,6 +132,7 @@
           if (time) info.append(createEl('p', 'concert-time', `${time} Uhr`));
           if (description)
             info.append(createEl('p', 'concert-description', description));
+          if (artists) info.append(createEl('p', 'concert-lineup', artists));
           if (website)
             info.append(
               createEl('a', 'concert-website', 'Mehr Infos', {

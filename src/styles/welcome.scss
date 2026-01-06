@@ -104,6 +104,7 @@
 .welcome__subtitle {
   margin: 14px 0 0;
   font-size: clamp(18px, 2.2vw, 28px);
+  font-weight: 400;
   color: $color-fg-primary;
   filter: drop-shadow(10px 10px 5px rgba(0, 0, 0, 0.4));
   font-family: $font-display;

@@ -61,6 +61,11 @@
   padding: 10px 10px;
   border-radius: $radius-sm;
   transition: color $transition-fast, background-color $transition-fast;
+
+  @media (max-width: $breakpoint-mobile) {
+    font-size: 1.5rem;
+    line-height: 2.5rem;
+  }
 }
 
 .site-nav__link:hover,
@@ -95,7 +100,7 @@
 }
 
 .site-nav__burger {
-  display: inline-flex;
+  display: flex;
   flex-direction: column;
   gap: 5px;
 }

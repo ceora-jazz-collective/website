@@ -68,12 +68,14 @@
 
 .welcome__bg {
   position: fixed;
-  inset: -20%;
-  width: 140%;
-  height: 140%;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
   object-fit: cover;
-  opacity: 0.4;
-  filter: blur(0px) saturate(400%) brightness(100%);
+  object-position: 60% top;
+  opacity: 0.5;
+  filter: blur(0px) saturate(150%) brightness(100%);
   pointer-events: none;
   user-select: none;
   z-index: -1;
@@ -101,11 +103,9 @@
 
 .welcome__subtitle {
   margin: 14px 0 0;
-  font-size: clamp(18px, 2.2vw, 24px);
-  color: rgba($color-fg-secondary, 0.92);
-}
-
-.welcome__subtitle {
+  font-size: clamp(18px, 2.2vw, 28px);
+  color: $color-fg-primary;
+  filter: drop-shadow(10px 10px 5px rgba(0, 0, 0, 0.4));
   font-family: $font-display;
 }
 
@@ -113,9 +113,10 @@
   font-size: 0.9rem;
   opacity: 0.7;
   font-weight: 300;
-  color: $color-fg-secondary;
+  color: $color-fg-primary;
   letter-spacing: 0.05em;
   margin-bottom: $spacing-lg;
+  filter: drop-shadow(10px 10px 5px rgba(0, 0, 0, 0.4));
 }
 
 .welcome__actions {

@@ -1,3 +1,7 @@
+---
+import { CONTACT_EMAIL } from '../config/variables';
+---
+
 <section id="contact" aria-label="Kontakt">
   <div class="section-inner">
     <h2 class="section-title">Kontakt</h2>
@@ -18,10 +22,10 @@
         </p>
         <p class="contact-card__line">
           <span class="contact-card__label">E-Mail</span>
-          <span class="contact-card__value">booking@ceora-band.at</span>
+          <span class="contact-card__value">{CONTACT_EMAIL}</span>
         </p>
         <div class="contact-card__actions">
-          <a class="btn btn-primary" href="mailto:booking@ceora-band.at"
+          <a class="btn btn-primary" href={`mailto:${CONTACT_EMAIL}`}
             >E-MAIL SCHREIBEN</a
           >
         </div>

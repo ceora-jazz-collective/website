@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import { CONTACT_EMAIL } from '../config/variables';
 ---
 
 <Layout>
@@ -24,9 +25,7 @@ import Layout from '../layouts/Layout.astro';
 
         <dt>Kontakt</dt>
         <dd>
-          E-Mail: <a href="mailto:booking@ceora-band.at"
-            >booking@ceora-band.at</a
-          >
+          E-Mail: <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>
         </dd>
 
         <dt>Vertretungsberechtigte Person</dt>
@@ -58,7 +57,7 @@ import Layout from '../layouts/Layout.astro';
       Diese Website enthält Links zu anderen Websites, für deren Inhalt wir
       nicht verantwortlich sind. Wenn Ihnen rechtswidrige Links auf unserer
       Website auffallen, bitten wir um einen Hinweis an
-      <a href="mailto:booking@ceora-band.at">booking@ceora-band.at</a>.
+      <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>.
     </p>
 
     <h2>Urheberrecht</h2>
@@ -71,9 +70,7 @@ import Layout from '../layouts/Layout.astro';
 
     <h2>Kontakt</h2>
     <p>
-      Für Anfragen: <a href="mailto:booking@ceora-band.at"
-        >booking@ceora-band.at</a
-      >
+      Für Anfragen: <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>
     </p>
   </article>
 </Layout>

@@ -1,4 +1,5 @@
 ---
+import { CONTACT_EMAIL } from '../config/variables';
 const year = new Date().getFullYear();
 ---
 
@@ -21,7 +22,7 @@ const year = new Date().getFullYear();
       <p class="site-footer__contact">
         Booking:&nbsp;<a
           class="site-footer__link"
-          href="mailto:booking@ceora-band.at">booking@ceora-band.at</a
+          href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a
         >
       </p>
     </div>

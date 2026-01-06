@@ -1,0 +1,96 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { CONTACT_EMAIL } from '../config/variables';
+const lastUpdated = '06.01.2026';
+---
+
+<Layout>
+  <article class="page">
+    <h1>Datenschutzerklärung</h1>
+
+    <p>
+      Der Schutz Ihrer persönlichen Daten ist uns wichtig. Diese Erklärung
+      informiert über Art, Umfang und Zweck der Verarbeitung personenbezogener
+      Daten auf dieser Website.
+    </p>
+
+    <p><strong>Stand:</strong> {lastUpdated}</p>
+
+    <h2>Verantwortliche Stelle</h2>
+    <p>
+      Dr. Ulrich Hejsek<br />
+      CEORA Jazz Collective Wien<br />
+      Ziererplatz 9<br />
+      1030 Wien<br />
+      Österreich
+    </p>
+    <p>
+      <strong>Kontakt:</strong>
+      <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>
+    </p>
+
+    <h2>Zugriffsdaten / Server-Logfiles</h2>
+    <p>
+      Beim Besuch dieser Website werden durch den Hosting-Anbieter technisch
+      bedingt Informationen verarbeitet (z.&nbsp;B. IP-Adresse, Datum/Uhrzeit,
+      aufgerufene Seite, Browser/Device, Referrer-URL). Diese Daten sind
+      erforderlich, um die Website auszuliefern, zu sichern und zu betreiben. Die Verarbeitung erfolgt auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an der sicheren und stabilen Bereitstellung der Website).
+    </p>
+
+    <h2>Hosting über GitHub Pages</h2>
+    <p>
+      Diese Website wird über GitHub Pages (GitHub, Inc.) bereitgestellt. Beim
+      Aufruf der Website können durch GitHub technisch notwendige Daten
+      verarbeitet werden, um die Inhalte auszuliefern und den Betrieb zu
+      gewährleisten (z.&nbsp;B. IP-Adresse und Logdaten). GitHub ist ein Anbieter mit Sitz in den USA. Es kann daher nicht ausgeschlossen werden, dass personenbezogene Daten auch in den USA verarbeitet werden.
+    </p>
+    <p>
+      Weitere Informationen finden Sie in der Datenschutzerklärung von GitHub:
+      <a
+        class="site-footer__link"
+        href="https://docs.github.com/de/site-policy/privacy-policies/github-privacy-statement"
+        rel="noopener noreferrer"
+        target="_blank">GitHub Privacy Statement</a
+      >.
+    </p>
+
+    <h2>Kontaktaufnahme</h2>
+    <p>
+      Wenn Sie per E-Mail Kontakt mit uns aufnehmen, verarbeiten wir die von
+      Ihnen übermittelten Daten zur Bearbeitung Ihrer Anfrage und für den Fall
+      von Anschlussfragen.
+    </p>
+
+    <h2>Externe Links</h2>
+    <p>
+        Diese Website enthält Links zu externen Websites Dritter. Beim Anklicken solcher Links verlassen Sie diese Website. Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber verantwortlich. Beim bloßen Aufruf dieser Website werden keine Daten an externe Anbieter übertragen.
+    </p>
+
+    <h2>Cookies</h2>
+
+    <p>Diese Website verwendet keine Cookies. Es findet keine personenbezogene Auswertung des Nutzerverhaltens statt.</p>
+
+    <h2>Web-Analyse (Simple Analytics)</h2>
+    <p>
+      Wir nutzen Simple Analytics, um die Nutzung der Website in aggregierter
+      Form auszuwerten. Laut Anbieter werden keine Cookies gesetzt und keine
+      personenbezogenen Profile erstellt. Weitere Informationen finden Sie in
+      der <a href="https://dashboard.simpleanalytics.com/privacy-policy" target="_blank" rel="noopener noreferrer">Datenschutzerklärung von Simple Analytics</a>.
+    </p>
+
+    <h2>Ihre Rechte</h2>
+    <p>
+      Sie haben – je nach anwendbarem Datenschutzrecht – insbesondere das Recht
+      auf Auskunft, Berichtigung, Löschung, Einschränkung der Verarbeitung,
+      Datenübertragbarkeit sowie Widerspruch. Wenn Sie der Meinung sind, dass
+      die Verarbeitung Ihrer Daten gegen Datenschutzrecht verstößt, können Sie
+      sich bei einer Aufsichtsbehörde beschweren.
+    </p>
+
+    <h2>Fragen</h2>
+    <p>
+      Bei Fragen zum Datenschutz erreichen Sie uns unter
+      <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>.
+    </p>
+  </article>
+</Layout>

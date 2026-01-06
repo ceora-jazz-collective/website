@@ -31,12 +31,12 @@ a {
 }
 
 .site-main {
-  min-height: calc(100vh - #{$nav-height});
+  min-height: calc(100vh - #{$nav-height} - #{$footer-height});
 }
 
 @media (max-width: $breakpoint-mobile) {
   .site-main {
-    min-height: calc(100vh - #{$nav-height-mobile});
+    min-height: calc(100vh - #{$nav-height-mobile} - #{$footer-height-mobile});
   }
 }
 

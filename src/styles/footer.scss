@@ -56,6 +56,10 @@
   margin: 0;
   color: $color-fg-secondary;
   text-align: right;
+
+  a {
+    text-decoration: underline;
+  }
 }
 
 .site-footer__link {

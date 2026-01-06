@@ -1,0 +1,102 @@
+---
+import fs from 'node:fs';
+import path from 'node:path';
+
+import collage from '../assets/images/ceora-collage.jpg';
+import groupMai from '../assets/images/ceora-gruppenfoto-mai-24-3.jpg';
+import groupDonau from '../assets/images/ceora-gruppenfoto-donaup.jpg';
+import jazzland1 from '../assets/images/ceora-jazz-land-1.jpg';
+import jazzland2 from '../assets/images/ceora-jazz-land-2.jpg';
+import ceora1 from '../assets/images/ceora-1.jpg';
+
+type Track = {
+  filename: string;
+  title: string;
+  src: string;
+};
+
+function titleFromFilename(filename: string) {
+  let result = filename.replace(/\.[^.]+$/, '').trim();
+  result = result.replace(/\s*\(.*$/, '').trim();
+  return result;
+}
+
+function publicHref(filename: string) {
+  return `/media/${encodeURIComponent(filename)}`;
+}
+
+const mediaDir = path.join(process.cwd(), 'public', 'media');
+
+let tracks: Track[] = [];
+try {
+  const entries = fs.readdirSync(mediaDir, { withFileTypes: true });
+  tracks = entries
+    .filter((e) => e.isFile())
+    .map((e) => e.name)
+    .filter((name) => name.toLowerCase().endsWith('.mp3'))
+    .sort((a, b) => a.localeCompare(b, 'de'))
+    .map((filename) => ({
+      filename,
+      title: titleFromFilename(filename),
+      src: publicHref(filename),
+    }));
+} catch {
+  tracks = [];
+}
+
+const photos = [
+  { img: collage, alt: 'Ceora – Collage' },
+  { img: groupMai, alt: 'Ceora – Gruppenfoto (Mai 2024)' },
+  { img: jazzland1, alt: 'Ceora – Live im Jazzland' },
+  { img: jazzland2, alt: 'Ceora – Live im Jazzland (2)' },
+  { img: groupDonau, alt: 'Ceora – Gruppenfoto' },
+  { img: ceora1, alt: 'Ceora – Bandfoto' },
+];
+---
+
+<section id="media" class="bg-secondary" aria-label="Media">
+  <div class="section-inner">
+    <h2 class="section-title">Hörbeispiele</h2>
+    <p class="section-lead">
+      CEORA ist eine Live-Band. Die folgenden Hörbeispiele geben einen Eindruck
+      von Klang, Energie und musikalischer Handschrift des Kollektivs und sind
+      als Einladung gedacht, die Musik live zu erleben.
+    </p>
+
+    {
+      tracks.length ? (
+        <ul class="media-audio-list">
+          {tracks.map((t) => (
+            <li class="media-audio-item">
+              <div class="media-audio-head">
+                <span class="media-track-title">{t.title}</span>
+              </div>
+              <audio controls preload="none" src={t.src}>
+                <a href={t.src}>Audio öffnen</a>
+              </audio>
+            </li>
+          ))}
+        </ul>
+      ) : (
+        <p class="media-empty">
+          Aktuell sind keine MP3-Hörbeispiele verfügbar.
+        </p>
+      )
+    }
+  </div>
+</section>
+
+<script>
+  document.addEventListener(
+    'play',
+    function (e) {
+      var audios = document.getElementsByTagName('audio');
+      for (var i = 0, len = audios.length; i < len; i++) {
+        if (audios[i] != e.target) {
+          audios[i].pause();
+        }
+      }
+    },
+    true
+  );
+</script>

@@ -1,0 +1,74 @@
+@use 'variables' as *;
+
+.media-block {
+  margin-top: 64px;
+}
+
+.media-lead {
+  margin-top: 0;
+  margin-bottom: $spacing-lg;
+  max-width: 720px;
+}
+
+.media-audio-list {
+  list-style: none;
+  padding: 0;
+  margin-top: $spacing-lg;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: $spacing-sm $spacing-lg;
+
+  @media (max-width: $breakpoint-mobile) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.media-audio-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: $spacing-md;
+}
+
+.media-track-title {
+  font-weight: 600;
+  color: $color-fg-primary;
+}
+
+.media-audio-item audio {
+  width: 100%;
+  margin-top: $spacing-xs;
+}
+
+.media-empty {
+  margin: 0;
+}
+
+.media-gallery {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: $spacing-sm;
+}
+
+.media-photo {
+  margin: 0;
+  border-radius: $radius-sm;
+  overflow: hidden;
+  border: 1px solid rgba(243, 243, 243, 0.12);
+  background: rgba(10, 14, 20, 0.25);
+}
+
+.media-photo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  aspect-ratio: 4 / 3;
+  transform: scale(1);
+  transition: transform $transition-normal, filter $transition-normal;
+  filter: saturate(1.02) contrast(1.02);
+}
+
+.media-photo:hover img {
+  transform: scale(1.03);
+}

@@ -18,6 +18,10 @@
   border: 1px solid rgba(243, 243, 243, 0.1);
   border-radius: $radius-md;
   transition: border-color $transition-fast;
+
+  @media (max-width: $breakpoint-mobile) {
+    padding: $spacing-md;
+  }
 }
 
 .concert-card:hover {

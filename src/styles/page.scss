@@ -36,29 +36,8 @@
   outline: none;
 }
 
-.page dl {
-  margin: 0;
-  display: grid;
-  grid-template-columns: auto 1fr;
-  gap: 12px 24px;
-}
-
-.page dt {
-  color: $color-fg-primary;
-  font-weight: 600;
-}
-
-.page dd {
-  margin: 0;
-  color: $color-fg-secondary;
-}
-
 @media (max-width: $breakpoint-mobile) {
   .page {
     padding: $spacing-md $spacing-sm $spacing-md;
-  }
-
-  .page dl {
-    grid-template-columns: 1fr;
   }
 }

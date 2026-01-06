@@ -116,6 +116,29 @@ p {
   line-height: 1.7;
 }
 
+dl {
+  margin: 0;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 12px 24px;
+}
+
+dt {
+  color: $color-fg-primary;
+  font-weight: 600;
+}
+
+dd {
+  margin: 0;
+  color: $color-fg-secondary;
+}
+
+@media (max-width: $breakpoint-mobile) {
+  dl {
+    grid-template-columns: 1fr;
+  }
+}
+
 .category-title {
   margin: 0 0 10px;
   font-size: 12px;

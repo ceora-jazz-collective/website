@@ -15,16 +15,10 @@ const year = new Date().getFullYear();
           class="site-footer__logo-img"
           src="/logo-white.svg"
           alt="Ceora Jazz Collective"
-          height="40"
+          height="60"
         />
       </a>
-      <p class="site-footer__tagline">Jazz Collective Wien — seit 2007</p>
-      <p class="site-footer__contact">
-        Booking:&nbsp;<a
-          class="site-footer__link"
-          href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a
-        >
-      </p>
+      <p class="site-footer__tagline">Jazz Collective Wien</p>
     </div>
 
     <nav class="site-footer__nav" aria-label="Footer">
@@ -36,9 +30,12 @@ const year = new Date().getFullYear();
 
     <div class="site-footer__legal">
       <p class="site-footer__copyright">
-        © {year} CEORA. Alle Rechte vorbehalten.
+        © {year} CEORA.<br />Alle Rechte vorbehalten.
       </p>
       <a class="site-footer__link" href="/impressum">Impressum</a>
+      <a class="site-footer__link" href={`mailto:${CONTACT_EMAIL}`}
+        >{CONTACT_EMAIL}</a
+      >
     </div>
   </div>
 </footer>

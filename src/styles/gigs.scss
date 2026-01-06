@@ -50,16 +50,21 @@
 }
 
 .concert-date .month {
-  font-size: 0.75rem;
+  font-size: 0.8rem;
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  color: $color-fg-secondary;
+  color: $color-fg-primary;
   margin-top: $spacing-xs;
 }
 
 .concert-date .year {
-  font-size: 0.625rem;
-  color: rgba(168, 180, 192, 0.7);
+  font-size: 0.7rem;
+  color: $color-fg-primary;
+
+  @media (max-width: $breakpoint-mobile) {
+    font-size: 0.8rem;
+    margin-top: $spacing-xs;
+  }
 }
 
 .concert-info h3 {

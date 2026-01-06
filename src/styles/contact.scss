@@ -38,19 +38,6 @@
   color: $color-accent-highlight;
 }
 
-.contact-card__link {
-  color: $color-fg-primary;
-  text-decoration: underline;
-  text-decoration-color: rgba(243, 243, 243, 0.28);
-  text-underline-offset: 3px;
-}
-
-.contact-card__link:hover,
-.contact-card__link:focus-visible {
-  text-decoration-color: rgba(243, 243, 243, 0.6);
-  outline: none;
-}
-
 .contact-card__actions {
   margin-top: $spacing-md;
 }

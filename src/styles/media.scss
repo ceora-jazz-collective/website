@@ -1,15 +1,5 @@
 @use 'variables' as *;
 
-.media-block {
-  margin-top: 64px;
-}
-
-.media-lead {
-  margin-top: 0;
-  margin-bottom: $spacing-lg;
-  max-width: 720px;
-}
-
 .media-audio-list {
   list-style: none;
   padding: 0;

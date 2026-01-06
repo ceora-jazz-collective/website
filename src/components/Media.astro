@@ -2,13 +2,6 @@
 import fs from 'node:fs';
 import path from 'node:path';
 
-import collage from '../assets/images/ceora-collage.jpg';
-import groupMai from '../assets/images/ceora-gruppenfoto-mai-24-3.jpg';
-import groupDonau from '../assets/images/ceora-gruppenfoto-donaup.jpg';
-import jazzland1 from '../assets/images/ceora-jazz-land-1.jpg';
-import jazzland2 from '../assets/images/ceora-jazz-land-2.jpg';
-import ceora1 from '../assets/images/ceora-1.jpg';
-
 type Track = {
   filename: string;
   title: string;
@@ -44,14 +37,6 @@ try {
   tracks = [];
 }
 
-const photos = [
-  { img: collage, alt: 'Ceora – Collage' },
-  { img: groupMai, alt: 'Ceora – Gruppenfoto (Mai 2024)' },
-  { img: jazzland1, alt: 'Ceora – Live im Jazzland' },
-  { img: jazzland2, alt: 'Ceora – Live im Jazzland (2)' },
-  { img: groupDonau, alt: 'Ceora – Gruppenfoto' },
-  { img: ceora1, alt: 'Ceora – Bandfoto' },
-];
 ---
 
 <section id="media" class="bg-secondary" aria-label="Media">

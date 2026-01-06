@@ -44,6 +44,10 @@ a {
   background: transparent;
 }
 
+.bg-opacity-primary {
+  background: rgba($color-bg-primary, 0.7);
+}
+
 .bg-secondary {
   background: $color-bg-secondary;
 }

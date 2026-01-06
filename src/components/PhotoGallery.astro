@@ -1,0 +1,39 @@
+---
+import groupDonau from '../assets/images/ceora-gruppenfoto-donaup.jpg';
+import jazzland1 from '../assets/images/ceora-jazz-land-1.jpg';
+import jazzland2 from '../assets/images/ceora-jazz-land-2.jpg';
+import jazzland3 from '../assets/images/ceora-jazz-land-3.png';
+
+const photos = [
+  { img: jazzland1, alt: 'Ceora - Live im Jazzland' },
+  { img: jazzland2, alt: 'Ceora - Live im Jazzland (2)' },
+  { img: jazzland3, alt: 'Ceora - Live im Jazzland (3)' },
+  { img: groupDonau, alt: 'Ceora - Gruppenfoto' },
+];
+---
+
+<section id="fotos" class="bg-opacity-primary" aria-label="Fotos">
+  <div class="section-inner">
+    <h2 class="section-title">Fotos</h2>
+    <p class="section-lead">Ein paar Eindrücke von Proben und Konzerten.</p>
+
+    <div class="media-gallery" role="list" aria-label="Fotogalerie">
+      {
+        photos.map((p) => (
+          <figure class="media-photo" role="listitem">
+            <a href={p.img.src} target="_blank" rel="noopener">
+              <img
+                src={p.img.src}
+                width={p.img.width}
+                height={p.img.height}
+                alt={p.alt}
+                loading="lazy"
+                decoding="async"
+              />
+            </a>
+          </figure>
+        ))
+      }
+    </div>
+  </div>
+</section>

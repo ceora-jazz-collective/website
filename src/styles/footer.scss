@@ -9,18 +9,32 @@
 .site-footer__inner {
   max-width: $container-max-width;
   margin: 0 auto;
-  padding: $spacing-lg $spacing-md;
+  padding: $spacing-lg $spacing-md $spacing-md $spacing-md;
 
   display: grid;
   grid-template-columns: 1.2fr 1fr 0.8fr;
-  gap: $spacing-lg;
+  gap: $spacing-md $spacing-lg;
   align-items: start;
 }
 
 .site-footer__brand {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 4px;
+}
+
+.site-footer__brand-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: fit-content;
+}
+
+/* Constrain tagline and social to logo width (logo 60px height ≈ 189px width) */
+.site-footer__brand-inner .site-footer__tagline,
+.site-footer__brand-inner .site-footer__social {
+  max-width: 188px;
+  box-sizing: border-box;
 }
 
 .site-footer__logo {
@@ -38,6 +52,31 @@
 .site-footer__tagline {
   margin: 0;
   color: $color-fg-secondary;
+  text-align: center;
+}
+
+.site-footer__social {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 4px;
+}
+
+.site-footer__social-link {
+  display: inline-flex;
+  color: $color-fg-secondary;
+  transition: color $transition-fast;
+
+  &:hover,
+  &:focus-visible {
+    color: $color-fg-primary;
+    outline: none;
+  }
+}
+
+.site-footer__social-icon {
+  width: 24px;
+  height: 24px;
 }
 
 .site-footer__nav {
@@ -57,9 +96,19 @@
   color: $color-fg-secondary;
   text-align: right;
 
-  a {
-    text-decoration: underline;
-  }
+}
+
+.site-footer__credit {
+  grid-column: 1 / -1;
+  margin: 4px 0 0;
+  font-size: 0.9rem;
+  opacity: 0.5;
+  color: $color-fg-secondary;
+  text-align: center;
+}
+
+.site-footer__credit-link {
+  text-decoration: underline;
 }
 
 .site-footer__link {
@@ -78,7 +127,7 @@
   .site-footer__inner {
     padding: $spacing-md $spacing-sm;
     grid-template-columns: 1fr;
-    gap: $spacing-md;
+    gap: $spacing-lg;
   }
 
   .site-footer__legal {

@@ -14,12 +14,7 @@ const links = [
       href="/"
       aria-label="Ceora Jazz Collective - Home"
     >
-      <img
-        class="site-nav__logo-img"
-        src="/logo-white.svg"
-        alt="Ceora Jazz Collective"
-        height="30"
-      />
+      CEORA
     </a>
 
     <ul class="site-nav__links site-nav__links--desktop" role="list">
@@ -69,7 +64,7 @@ const links = [
     header.classList.toggle('is-scrolled', window.scrollY > 0);
     header.classList.toggle(
       'is-menu-open',
-      !!mobileMenu && mobileMenu.hasAttribute('open')
+      !!mobileMenu && mobileMenu.hasAttribute('open'),
     );
   }
 

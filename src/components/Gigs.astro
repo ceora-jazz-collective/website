@@ -71,9 +71,8 @@
       const info = createEl('div', 'concert-info');
       info.append(createEl('h3', '', 'Weitere Termine'));
       info.append(
-        createEl('p', 'concert-venue', 'Werden in Kürze bekanntgegeben')
+        createEl('p', 'concert-venue', 'Werden in Kürze bekanntgegeben'),
       );
-      info.append(createEl('p', 'concert-time', 'Newsletter abonnieren'));
 
       article.append(dateBox, info);
       root.append(article);
@@ -138,7 +137,7 @@
               createEl('a', 'concert-website', 'Mehr Infos', {
                 href: website,
                 target: '_blank',
-              })
+              }),
             );
 
           article.append(dateBox, info);
@@ -149,7 +148,7 @@
         const msg = createEl(
           'div',
           'gigs-status gigs-status--error',
-          'Termine konnten nicht geladen werden.'
+          'Termine konnten nicht geladen werden.',
         );
         root.append(msg);
         // eslint-disable-next-line no-console

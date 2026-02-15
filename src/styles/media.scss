@@ -34,6 +34,37 @@
   margin: 0;
 }
 
+.media-social-text {
+  margin: $spacing-lg 0 $spacing-sm;
+  color: rgba($color-fg-primary, 0.85);
+}
+
+.media-social-buttons {
+  margin-top: $spacing-md;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: $spacing-sm $spacing-lg;
+
+  @media (max-width: $breakpoint-mobile) {
+    grid-template-columns: 1fr;
+    justify-items: center;
+  }
+}
+
+.media-social-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+}
+
+.media-social-icon {
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+}
+
 .media-gallery {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));

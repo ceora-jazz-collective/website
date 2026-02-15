@@ -58,7 +58,7 @@ section {
   margin: 0 auto;
   padding: 0 $spacing-md;
 
-  & > h2 {
+  &>h2 {
     margin-top: 0;
   }
 
@@ -80,8 +80,9 @@ section {
 
 .section-title {
   font-family: $font-display;
-  font-size: clamp(2rem, 5vw, 2.5rem);
-  font-weight: 400;
+  font-size: clamp(1.9rem, 4vw, 1.9rem);
+  font-weight: 700;
+  text-transform: uppercase;
   letter-spacing: 0.05em;
   margin-bottom: $spacing-sm;
   color: $color-fg-primary;

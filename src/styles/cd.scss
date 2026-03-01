@@ -1,0 +1,161 @@
+@use 'variables' as *;
+
+.cd-hero {
+  display: grid;
+  grid-template-columns: minmax(240px, 434px) 1fr;
+  gap: $spacing-lg;
+  align-items: start;
+  margin-top: $spacing-lg;
+
+  @media (max-width: 900px) {
+    grid-template-columns: 1fr;
+    justify-items: center;
+  }
+}
+
+.cd-cover-wrap {
+  position: relative;
+  overflow: hidden;
+  filter: drop-shadow(0 12px 40px rgba(0, 0, 0, 0.5));
+  justify-items: center;
+
+  @media (max-width: 900px) {
+    max-width: 100%;
+  }
+}
+
+.cd-cover {
+  display: block;
+  width: 100%;
+  max-width: 280px;
+  height: auto;
+  vertical-align: middle;
+}
+
+.cd-info {
+  min-width: 0;
+}
+
+.cd-album-title {
+  font-family: $font-display;
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: $color-accent-highlight;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin: 0 0 $spacing-md;
+}
+
+.cd-intro {
+  color: $color-fg-secondary;
+  font-size: 1rem;
+  line-height: 1.75;
+
+  p {
+    margin: 0 0 1em;
+  }
+
+  p:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.cd-band {
+  margin-top: $spacing-md;
+  padding: $spacing-sm $spacing-md;
+}
+
+.cd-band-list {
+  list-style: none;
+  padding: 0;
+  margin: $spacing-xs 0 0;
+}
+
+.cd-band-list li {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0 0.5em;
+  padding: 4px 0;
+
+  &:last-child {
+    border-bottom: 0;
+  }
+}
+
+.cd-band-name {
+  font-weight: 600;
+  color: $color-fg-primary;
+}
+
+.cd-band-role {
+  font-size: 0.9rem;
+  color: $color-fg-secondary;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.cd-tracklist {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 6px 24px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  color: $color-fg-secondary;
+}
+
+.cd-tracklist li {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0 6px;
+}
+
+.cd-track-num {
+  flex-shrink: 0;
+  font-weight: 600;
+  color: $color-fg-primary;
+}
+
+.cd-track-title {
+  font-weight: 500;
+  color: $color-fg-primary;
+}
+
+.cd-track-composer {
+  font-size: 0.9rem;
+  color: $color-fg-secondary;
+}
+
+.cd-audio {
+  padding-top: $spacing-sm;
+}
+
+.cd-audio-list {
+  list-style: none;
+  padding: 0;
+  margin: $spacing-md 0 0;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: $spacing-sm $spacing-lg;
+
+  @media (max-width: $breakpoint-mobile) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.cd-audio-item {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-xs;
+}
+
+.cd-audio-title {
+  font-weight: 600;
+  color: $color-fg-primary;
+}
+
+.cd-audio-item audio {
+  width: 100%;
+}

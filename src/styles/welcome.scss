@@ -18,31 +18,21 @@
   pointer-events: none;
 
   // Glamorous bokeh + lapislazuli "aurora" sheen + subtle sparkles (kept behind content)
-  background: radial-gradient(
-      820px 540px at 18% 20%,
+  background: radial-gradient(820px 540px at 18% 20%,
       rgba($color-accent-highlight, 0.26),
-      rgba($color-bg-primary, 0) 62%
-    ),
-    radial-gradient(
-      680px 520px at 86% 26%,
+      rgba($color-bg-primary, 0) 62%),
+    radial-gradient(680px 520px at 86% 26%,
       rgba($color-accent-secondary, 0.22),
-      rgba($color-bg-primary, 0) 60%
-    ),
-    radial-gradient(
-      980px 680px at 55% 92%,
+      rgba($color-bg-primary, 0) 60%),
+    radial-gradient(980px 680px at 55% 92%,
       rgba($color-accent-primary, 0.22),
-      rgba($color-bg-primary, 0) 64%
-    ),
-    radial-gradient(
-      1200px 700px at 50% 35%,
+      rgba($color-bg-primary, 0) 64%),
+    radial-gradient(1200px 700px at 50% 35%,
       rgba($color-accent-secondary, 0.12),
-      rgba($color-bg-primary, 0) 72%
-    ),
-    linear-gradient(
-      135deg,
+      rgba($color-bg-primary, 0) 72%),
+    linear-gradient(135deg,
       rgba($color-accent-highlight, 0.08),
-      rgba($color-bg-primary, 0) 60%
-    );
+      rgba($color-bg-primary, 0) 60%);
   opacity: 0.62;
   mix-blend-mode: screen;
   filter: saturate(125%) contrast(112%);
@@ -57,7 +47,7 @@
   object-fit: cover;
   object-position: 60% top;
   opacity: 0.5;
-  filter: blur(0px) saturate(150%) brightness(100%);
+  filter: blur(0px) saturate(150%) brightness(50%);
   pointer-events: none;
   user-select: none;
   z-index: -1;
@@ -76,7 +66,8 @@
   background-size: contain;
   filter: drop-shadow(10px 10px 5px #00000066);
   /* Set the dimensions of the h1 to match the image */
-  height: 150px; /* Adjust height as needed */
+  height: 150px;
+  /* Adjust height as needed */
   /* Visually hide the text inside the h1 */
   text-indent: 100%;
   white-space: nowrap;

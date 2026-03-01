@@ -1,0 +1,188 @@
+---
+import cdCover from '../assets/images/jazz-sommer-baden-2024-cd-cover-3d.png';
+
+const albumTitle = 'LIVE @ JAZZ-SOMMER BADEN 2024';
+const mediaBase = '/media/jazz-sommer-baden-2024';
+
+const tracks = [
+  {
+    num: 1,
+    title: 'My Blues',
+    composer: 'Slide Hampton',
+    file: '05 - My Blues - CEORA JAZZ COLLECTIVE_HOOK_20s.mp3',
+  },
+  {
+    num: 2,
+    title: 'Ceora',
+    composer: 'Lee Morgan',
+    file: '02 - Ceora - CEORA JAZZ COLLECTIVE_HOOK_20s.mp3',
+  },
+  {
+    num: 3,
+    title: 'Devilette',
+    composer: 'Ben Tucker',
+    file: '03 - Devilette - CEORA JAZZ COLLECTIVE_HOOK_20s.mp3',
+  },
+  {
+    num: 4,
+    title: 'Escapade',
+    composer: 'Kenny Dorham',
+    file: '04 - Escapade - CEORA JAZZ COLLECTIVE_HOOK_20s.mp3',
+  },
+  {
+    num: 5,
+    title: "Alfie's Theme",
+    composer: 'Sonny Rollins',
+    file: "06 - Alfie's Theme - CEORA JAZZ COLLECTIVE_HOOK_20s.mp3",
+  },
+  {
+    num: 6,
+    title: 'Free for All',
+    composer: 'Wayne Shorter',
+    file: '01 - Free f or All CEORA JAZZ COLLECTIVE_HOOK_20s.mp3',
+  },
+  {
+    num: 7,
+    title: 'Dolphin Dance',
+    composer: 'Herbie Hancock',
+    file: '07 - Dolphin Dance - CEORA JAZZ COLLECTIVE_HOOK_20s.mp3',
+  },
+  {
+    num: 8,
+    title: 'Melody for C',
+    composer: 'Sonny Clark',
+    file: '08 - Melody for C - CEORA JAZZ COLLECTIVE_HOOK_20s.mp3',
+  },
+];
+
+const band = [
+  { name: 'Günter Spies', role: 'Posaune, Arrangements' },
+  { name: 'Josef Fuchsberger', role: 'Trompete, Flügelhorn' },
+  { name: 'Ben Daxbacher', role: 'Tenorsaxophon' },
+  { name: 'Daniel Weber', role: 'Altsaxophon' },
+  { name: 'Dušan Simović', role: 'Kontrabass' },
+  { name: 'Konstantin B. Schmid', role: 'Klavier' },
+  { name: 'Uli Hejsek', role: 'Schlagzeug, musikalische Leitung' },
+];
+
+const cdOrderEmail = 'kontakt@ceora-band.at';
+---
+
+<section
+  id="cd"
+  class="bg-secondary"
+  aria-label="CD Live Jazz-Sommer Baden 2024"
+>
+  <div class="section-inner">
+    <h2 class="section-title">Live CD - Jazz-Sommer Baden 2024</h2>
+    <p class="section-lead">
+      CEORA Jazz Collective – Live-Mitschnitt vom Jazz-Sommer Baden am 29. Juli
+      2024.
+    </p>
+
+    <div class="cd-hero">
+      <div class="cd-cover-wrap">
+        <img
+          src={cdCover.src}
+          width={cdCover.width}
+          height={cdCover.height}
+          alt={`CD-Cover: ${albumTitle}`}
+          class="cd-cover"
+          loading="lazy"
+          decoding="async"
+        />
+        <div class="cd-band">
+          <h4 class="category-title">Besetzung (Live)</h4>
+          <ul class="cd-band-list">
+            {
+              band.map((m) => (
+                <li>
+                  <span class="cd-band-name">{m.name}</span>
+                  <span class="cd-band-role">{m.role}</span>
+                </li>
+              ))
+            }
+          </ul>
+        </div>
+      </div>
+      <div class="cd-info">
+        <h3 class="cd-album-title">{albumTitle}</h3>
+        <div class="cd-intro">
+          <p>
+            Am 29. Juli 2024 stand CEORA beim Jazz-Sommer Baden auf der Bühne –
+            mitten im sommerlichen Open-Air-Ambiente, getragen von der
+            besonderen Atmosphäre dieses traditionsreichen Festivals. Was an
+            diesem Abend entstand, ist mehr als ein Konzertmitschnitt: Es ist
+            eine Momentaufnahme lebendiger Jazzkultur.
+          </p>
+
+          <p>
+            Die Aufnahme fängt die Energie des Septetts in ihrer ganzen
+            Bandbreite ein – kraftvolle Bläsersätze, fein abgestimmtes
+            Zusammenspiel der Rhythmusgruppe und Soli, die Raum für
+            Persönlichkeit und Spontaneität lassen. Zwischen Hardbop-Klassikern
+            und lyrischen Balladen entfaltet sich ein Programm, das Tradition
+            respektiert und zugleich frisch und unmittelbar wirkt.
+          </p>
+
+          <p>
+            Produktion, Mix und Mastering wurden mit viel Feingefühl umgesetzt,
+            sodass die Dynamik des Live-Erlebnisses erhalten bleibt –
+            transparent im Klang, warm im Gesamtbild und nah am Bühnengeschehen.
+            So entsteht das Gefühl, selbst Teil dieses Sommerabends gewesen zu
+            sein.
+          </p>
+
+          <p>
+            Diese CD richtet sich an alle, die Jazz in seiner direkten,
+            unverfälschten Form schätzen – als Erinnerung an ein besonderes
+            Konzert oder als Einladung, CEORA erstmals live zu erleben.
+          </p>
+          <p>
+            Die CD kann unter{' '}
+            <a href={`mailto:${cdOrderEmail}`}>{cdOrderEmail}</a> bei Uli Hejsek bestellt
+            werden.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="cd-audio">
+      <h3>CD Tracks</h3>
+      <ul class="cd-audio-list">
+        {
+          tracks.map((t) => (
+            <li class="cd-audio-item">
+              <span class="cd-audio-title">
+                {t.num}. {t.title}{' '}
+                <span class="cd-track-composer">({t.composer})</span>
+              </span>
+              <audio
+                controls
+                preload="none"
+                src={`${mediaBase}/${encodeURIComponent(t.file)}`}
+              >
+                <a href={`${mediaBase}/${encodeURIComponent(t.file)}`}>
+                  Audio öffnen
+                </a>
+              </audio>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </div>
+</section>
+
+<script>
+  document.addEventListener(
+    'play',
+    function (e: Event) {
+      const audios = document.querySelectorAll<HTMLAudioElement>('#cds audio');
+      audios.forEach((audio) => {
+        if (audio !== e.target) audio.pause();
+      });
+    },
+    true,
+  );
+</script>

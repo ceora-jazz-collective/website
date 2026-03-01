@@ -6,6 +6,7 @@
 @use 'gigs';
 @use 'media';
 @use 'contact';
+@use 'cd';
 
 body {
   font-family: $font-body;
@@ -38,6 +39,10 @@ a {
   .site-main {
     min-height: calc(100vh - #{$nav-height-mobile} - #{$footer-height-mobile});
   }
+}
+
+.bg-primary {
+  background: $color-bg-primary;
 }
 
 .bg-opacity-primary {
@@ -156,7 +161,7 @@ dd {
   justify-content: center;
   min-width: 220px;
   padding: 14px 22px;
-  border-radius: 0;
+  border-radius: 8px;
   border: 1px solid rgba(243, 243, 243, 0.28);
   background: transparent;
   color: rgba(235, 240, 246, 0.92);

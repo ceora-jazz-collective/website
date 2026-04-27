@@ -28,5 +28,15 @@
     "description": null,
     "address": "Rudolfsplatz 12, 1010 Wien",
     "website": null
+  },
+  {
+    "file": "2026-05-30 Borromäus Platz.mdx",
+    "date": "2026-05-30T00:00:00.000Z",
+    "time": "19:00",
+    "location": "Karl-Borromäus Saal",
+    "artists": null,
+    "description": "Live Jazz in Spring",
+    "address": "Karl-Borromäus Platz 3, 1000 Wien",
+    "website": null
   }
 ]
